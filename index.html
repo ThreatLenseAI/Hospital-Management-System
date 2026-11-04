@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head><body><header>
+    <h1>🏥 Hospital Management System</h1>
+    <p>Manage Hospital Operations Easily</p>
+</header><nav>
+    <button onclick="showSection('dashboard')">Dashboard</button>
+    <button onclick="showSection('patients')">Patients</button>
+    <button onclick="showSection('doctors')">Doctors</button>
+    <button onclick="showSection('appointments')">Appointments</button>
+    <button onclick="showSection('billing')">Billing</button>
+</nav><main><section id="dashboard" class="section">
+    <h2>Dashboard</h2><div class="cards">
+    <div class="card">
+        <h3>Total Patients</h3>
+        <p id="patientCount">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Total Doctors</h3>
+        <p id="doctorCount">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Appointments</h3>
+        <p id="appointmentCount">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Total Revenue</h3>
+        <p id="revenue">₹0</p>
+    </div>
+</div>
+
+</section><section id="patients" class="section hidden">
+    <h2>Patient Management</h2><input id="patientName" placeholder="Patient Name">
+<input id="patientAge" type="number" placeholder="Age">
+<input id="patientMobile" placeholder="Mobile Number">
+<input id="patientDisease" placeholder="Disease / Reason for Visit">
+
+<button onclick="addPatient()">Add Patient</button>
+
+<div id="patientList"></div>
+
+</section><section id="doctors" class="section hidden">
+    <h2>Doctor Management</h2><input id="doctorName" placeholder="Doctor Name">
+<input id="doctorSpeciality" placeholder="Specialization">
+<input id="doctorMobile" placeholder="Mobile Number">
+
+<button onclick="addDoctor()">Add Doctor</button>
+
+<div id="doctorList"></div>
+
+</section><section id="appointments" class="section hidden">
+    <h2>Appointment Management</h2><input id="appointmentPatient" placeholder="Patient Name">
+<input id="appointmentDoctor" placeholder="Doctor Name">
+<input id="appointmentDate" type="date">
+<input id="appointmentTime" type="time">
+
+<button onclick="addAppointment()">Book Appointment</button>
+
+<div id="appointmentList"></div>
+
+</section><section id="billing" class="section hidden">
+    <h2>Billing Management</h2><input id="billPatient" placeholder="Patient Name">
+<input id="billAmount" type="number" placeholder="Bill Amount (₹)">
+
+<button onclick="addBill()">Generate Bill</button>
+
+<div id="billList"></div>
+
+</section></main><script src="script.js"></script></body>
+</html>

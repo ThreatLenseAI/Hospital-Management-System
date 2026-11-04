@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div><h1>🏥 Hospital Management System</h1><p>Hospital operations at a glance</p></div>
+</header>
+<nav>
+  <button onclick="showSection('dashboard')">Dashboard</button>
+  <button onclick="showSection('patients')">Patients</button>
+  <button onclick="showSection('doctors')">Doctors</button>
+  <button onclick="showSection('appointments')">Appointments</button>
+  <button onclick="showSection('billing')">Billing</button>
+</nav>
+<main>
+  <section id="dashboard" class="section">
+    <h2>Dashboard</h2>
+    <div class="cards">
+      <article class="card"><span>Total Patients</span><strong id="patientCount">0</strong></article>
+      <article class="card"><span>Total Doctors</span><strong id="doctorCount">0</strong></article>
+      <article class="card"><span>Appointments</span><strong id="appointmentCount">0</strong></article>
+      <article class="card"><span>Total Billing</span><strong id="revenue">₹0</strong></article>
+    </div>
+    <h3>Recent appointments</h3><div id="recentAppointments" class="list"></div>
+  </section>
+
+  <section id="patients" class="section hidden">
+    <h2>Patient Management</h2>
+    <form id="patientForm">
+      <input id="patientName" placeholder="Patient name" required maxlength="80">
+      <input id="patientAge" type="number" placeholder="Age" min="1" max="120" required>
+      <input id="patientMobile" type="tel" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+      <input id="patientReason" placeholder="Reason for visit" required maxlength="160">
+      <button type="submit">Add Patient</button>
+    </form>
+    <div id="patientList" class="list"></div>
+  </section>
+
+  <section id="doctors" class="section hidden">
+    <h2>Doctor Management</h2>
+    <form id="doctorForm">
+      <input id="doctorName" placeholder="Doctor name" required maxlength="80">
+      <input id="doctorSpeciality" placeholder="Specialization" required maxlength="80">
+      <input id="doctorMobile" type="tel" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+      <button type="submit">Add Doctor</button>
+    </form>
+    <div id="doctorList" class="list"></div>
+  </section>
+
+  <section id="appointments" class="section hidden">
+    <h2>Appointment Management</h2>
+    <form id="appointmentForm">
+      <input id="appointmentPatient" placeholder="Patient name" required maxlength="80">
+      <input id="appointmentDoctor" placeholder="Doctor name" required maxlength="80">
+      <label>Date <input id="appointmentDate" type="date" required></label>
+      <label>Time <input id="appointmentTime" type="time" required></label>
+      <button type="submit">Book Appointment</button>
+    </form>
+    <div id="appointmentList" class="list"></div>
+  </section>
+
+  <section id="billing" class="section hidden">
+    <h2>Billing Management</h2>
+    <form id="billForm">
+      <input id="billPatient" placeholder="Patient name" required maxlength="80">
+      <input id="billDescription" placeholder="Bill description" required maxlength="120">
+      <input id="billAmount" type="number" placeholder="Amount (₹)" min="1" step="0.01" required>
+      <button type="submit">Generate Bill</button>
+    </form>
+    <div id="billList" class="list"></div>
+  </section>
+</main>
+<footer>College demonstration project · Sample data only</footer>
+<script src="script.js"></script>
+</body>
+</html>
